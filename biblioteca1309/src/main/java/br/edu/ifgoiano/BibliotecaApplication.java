@@ -36,7 +36,7 @@ public class BibliotecaApplication implements CommandLineRunner {
 		livroRepository.save(livro2);
 		
 		Livro livro3 = new Livro();
-		livro3.setNome("Como NÃo ficar livro");
+		livro3.setNome("Como NÃo ficar rico");
 		livro3.setAutor("Hudson");
 		livro3.setIsbn("111213");
 		
