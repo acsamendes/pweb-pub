@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.ifgoiano.entidade.Livro;
@@ -44,4 +45,21 @@ public class LivroController {
 		livroRepository.save(livro);
 		return "redirect:/livros";
 	}
+	
+	@GetMapping("/livros/alterar/{id}")
+	public String abrirAlterarLivro(@PathVariable Long id , Model model) {
+		Livro livro = this.livroServiceImpl.obterLivro(id);
+				
+		model.addAttribute("livro", livro);
+		
+		return "alterar-livro";
+	}
+	
+	@PostMapping("/livros/alterar")
+	public String alterarLivro (Livro livro){
+		this.livroServiceImpl.alterarLivro(livro);
+		return "redirect:/livros";
+	}
+	
+	
 }
