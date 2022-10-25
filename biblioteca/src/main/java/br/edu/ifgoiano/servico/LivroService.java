@@ -10,4 +10,6 @@ public interface LivroService {
 	public Livro obterLivro(Long id);
 
 	public void alterarLivro(Livro livro);
+	
+	public void excluirLivro(Long id);
 }

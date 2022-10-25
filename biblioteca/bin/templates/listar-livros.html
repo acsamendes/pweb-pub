@@ -17,36 +17,37 @@
 			<h1>Listagem de livros</h1>
 		</div>
 
-	</div>
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">ISBN</th>
+						<th scope="col">Nome</th>
+						<th scope="col">hudson</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-th-each="livro : ${livros}">
+						<td data-th-text="${livro.id}"></td>
+						<td data-th-text="${livro.isbn}"></td>
+						<td data-th-text="${livro.nome}"></td>
+						<td data-th-text="${livro.autor}"></td>
+						<td><a th:href="@{/livros/alterar/{id}(id=${livro.id})}"
+							class="btn btn-success">Alterar</a> 
+							<a th:href="@{/livros/excluir/{id}(id=${livro.id})}" class="btn btn-danger">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg3">
+				<a th:href="@{/livros/novo}" class="btn btn-primary">Incluir</a>
+			</div>
 
-	<div class="row">
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">ISBN</th>
-					<th scope="col">Nome</th>
-					<th scope="col">Autor</th>
-					<th scope="col"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr data-th-each="livro : ${livros}">
-					<td data-th-text="${livro.id}"></td>
-					<td data-th-text="${livro.isbn}"></td>
-					<td data-th-text="${livro.nome}"></td>
-					<td data-th-text="${livro.autor}"></td>
-					<td>
-						<a th:href="@{/livros/alterar/{id}(id=${livro.id})}" class="btn btn-success">Alterar</a>
-						<a class="btn btn-danger">Excluir</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="row">
-		<div class="col-lg3">
-			<a th:href="@{/livros/novo}" class="btn btn-primary">Incluir</a>
 		</div>
 
 	</div>

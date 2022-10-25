@@ -26,7 +26,7 @@
 					<th scope="col">ID</th>
 					<th scope="col">ISBN</th>
 					<th scope="col">Nome</th>
-					<th scope="col">Autor</th>
+					<th scope="col">hudson</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -38,7 +38,7 @@
 					<td data-th-text="${livro.autor}"></td>
 					<td>
 						<a th:href="@{/livros/alterar/{id}(id=${livro.id})}" class="btn btn-success">Alterar</a>
-						<a class="btn btn-danger">Excluir</a>
+						<a th:href="@{/livros/excluir/{id}(id=${livro.id})}" class="btn btn-danger">Excluir</a>
 					</td>
 				</tr>
 			</tbody>
