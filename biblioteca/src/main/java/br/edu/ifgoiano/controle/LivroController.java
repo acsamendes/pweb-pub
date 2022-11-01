@@ -62,19 +62,12 @@ public class LivroController {
 	}
 	
 	@GetMapping("/livros/excluir/{id}")
-	public String abrirExcluirLivro(@PathVariable Long id , Model model) {
-		Livro livro = this.livroServiceImpl.obterLivro(id);
-				
-		model.addAttribute("livro", livro);
+	public String abrirExcluirLivro(@PathVariable Long id) {
+		this.livroServiceImpl.excluirLivro(id);
 		
-		return "excluir-livro";
-	}
-	
-	@PostMapping("/livros/excluir")
-	public String excluirLivro (Livro livro){
-		this.livroServiceImpl.excluirLivro(livro.getId());
 		return "redirect:/livros";
 	}
+	
 	
 	
 }
